@@ -15,7 +15,7 @@ const validarCampos = (req = request, res = response, next) => {
 };
 
 const userExistsByEmail = (email) => {
-	Usuario.findOne({ email }).then((user) => {
+	return Usuario.findOne({ email }).then((user) => {
 		if (user) {
 			return Promise.reject('El email ya está en uso');
 		}
